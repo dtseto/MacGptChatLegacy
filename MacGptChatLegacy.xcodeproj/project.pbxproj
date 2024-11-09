@@ -12,6 +12,7 @@
 		0FF0269E2CDED50000778366 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF0269D2CDED50000778366 /* Assets.xcassets */; };
 		0FF026A12CDED50000778366 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF026A02CDED50000778366 /* Preview Assets.xcassets */; };
 		0FF026A42CDED50100778366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF026A22CDED50100778366 /* Main.storyboard */; };
+		0FF026AD2CDED70600778366 /* TextViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF026AC2CDED70600778366 /* TextViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0FF026A32CDED50100778366 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FF026A52CDED50100778366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF026A62CDED50100778366 /* MacGptChatLegacy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacGptChatLegacy.entitlements; sourceTree = "<group>"; };
+		0FF026AC2CDED70600778366 /* TextViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0FF026A52CDED50100778366 /* Info.plist */,
 				0FF026A62CDED50100778366 /* MacGptChatLegacy.entitlements */,
 				0FF0269F2CDED50000778366 /* Preview Content */,
+				0FF026AC2CDED70600778366 /* TextViewWrapper.swift */,
 			);
 			path = MacGptChatLegacy;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF026AD2CDED70600778366 /* TextViewWrapper.swift in Sources */,
 				0FF0269C2CDED4FD00778366 /* ContentView.swift in Sources */,
 				0FF0269A2CDED4FD00778366 /* AppDelegate.swift in Sources */,
 			);
@@ -214,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -269,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -296,6 +300,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = .99;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = DavidSeto.MacGptChatLegacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -320,6 +326,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = .99;
 				PRODUCT_BUNDLE_IDENTIFIER = DavidSeto.MacGptChatLegacy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
