@@ -9,16 +9,19 @@
 // includes a debug logging view to see the api
 // ContentView.swift
 import SwiftUI
+import UniformTypeIdentifiers
+
 
 struct ContentView: View {
     @State private var apiKey: String = ""
     @State private var message: String = ""
-    @State private var conversation: String = ""
+    @State private var conversation: String = "Chat started...\n"  // Initialize with starting text
     @State private var debugLog: String = "Debug Log:\n"
     @State private var isLoading: Bool = false
     @State private var showDebug: Bool = false
     @State private var showAPIKeyInput: Bool = true
     
+
     var body: some View {
         VStack(spacing: 20) {
             if showAPIKeyInput {
@@ -49,30 +52,29 @@ struct ContentView: View {
             } else {
                 // Main Chat Interface
                 // Toggle for debug view
-                Toggle("Show Debug Log", isOn: $showDebug)
-                    .padding(.horizontal)
-                
-                if showDebug {
-                    // Debug log area
-                    ScrollView {
-                        Text(debugLog)
-                            .font(.system(.body, design: .monospaced))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
+                VStack {
+                    HStack {
+                        Toggle("Show Debug Log", isOn: $showDebug)
+                        Spacer()
+                        Button("Save Conversation") {
+                            saveConversation()
+                        }
                     }
-                    .frame(height: 200)
-                    .border(Color.gray)
-                }
-                
-                // Chat history area
-                ScrollView {
-                    Text(conversation)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                }
-                .frame(height: showDebug ? 150 : 300)
-                .border(Color.gray)
-                
+                    .padding(.horizontal)
+                    
+                    if showDebug {
+                        // Debug log area with selectable text
+                        SelectableText(text: debugLog)
+                            .frame(height: 200)
+                            .border(Color.gray)
+                    }
+                    
+                    
+                    // Chat history area with selectable text
+                    SelectableText(text: conversation)
+                        .frame(height: showDebug ? 150 : 300)
+                        .border(Color.gray)
+                    
                 // Loading indicator
                 if isLoading {
                     Text("Loading...")
@@ -105,8 +107,29 @@ struct ContentView: View {
                 .foregroundColor(.blue)
             }
         }
-        .frame(width: 500, height: 500)
     }
+    .frame(width: 500, height: 500)
+}
+ 
+    private func saveConversation() {
+        let panel = NSSavePanel()
+        panel.allowedFileTypes = ["txt"]  // Use this instead of allowedContentTypes
+        panel.canCreateDirectories = true
+        panel.title = "Save Conversation"
+        panel.nameFieldStringValue = "conversation.txt"
+        
+        panel.begin { response in
+            if response == .OK, let url = panel.url {
+                do {
+                    try conversation.write(to: url, atomically: true, encoding: .utf8)
+                    appendToLog("Conversation saved to: \(url.path)")
+                } catch {
+                    appendToLog("Error saving conversation: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
     
     private func appendToLog(_ text: String) {
         debugLog += text + "\n"
@@ -135,7 +158,7 @@ struct ContentView: View {
         request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         
         let requestBody: [String: Any] = [
-            "model": "gpt-3.5-turbo",
+            "model": "gpt-4o-mini",
             "messages": [
                 ["role": "user", "content": userMessage]
             ]

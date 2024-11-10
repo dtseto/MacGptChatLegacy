@@ -13,6 +13,7 @@
 		0FF026A12CDED50000778366 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF026A02CDED50000778366 /* Preview Assets.xcassets */; };
 		0FF026A42CDED50100778366 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF026A22CDED50100778366 /* Main.storyboard */; };
 		0FF026AD2CDED70600778366 /* TextViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF026AC2CDED70600778366 /* TextViewWrapper.swift */; };
+		0FF026AF2CDFD4F400778366 /* SelectableText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF026AE2CDFD4F400778366 /* SelectableText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0FF026A52CDED50100778366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FF026A62CDED50100778366 /* MacGptChatLegacy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacGptChatLegacy.entitlements; sourceTree = "<group>"; };
 		0FF026AC2CDED70600778366 /* TextViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewWrapper.swift; sourceTree = "<group>"; };
+		0FF026AE2CDFD4F400778366 /* SelectableText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				0FF026A62CDED50100778366 /* MacGptChatLegacy.entitlements */,
 				0FF0269F2CDED50000778366 /* Preview Content */,
 				0FF026AC2CDED70600778366 /* TextViewWrapper.swift */,
+				0FF026AE2CDFD4F400778366 /* SelectableText.swift */,
 			);
 			path = MacGptChatLegacy;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF026AF2CDFD4F400778366 /* SelectableText.swift in Sources */,
 				0FF026AD2CDED70600778366 /* TextViewWrapper.swift in Sources */,
 				0FF0269C2CDED4FD00778366 /* ContentView.swift in Sources */,
 				0FF0269A2CDED4FD00778366 /* AppDelegate.swift in Sources */,
