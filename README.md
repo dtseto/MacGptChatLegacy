@@ -10,5 +10,5 @@ gpt-3.5-turbo gpt-3.5-turbo-0125
 chatgpt-4o-latest gpt-4o-2024-08-06
 gpt-4.1-2025-04-14
 o4-mini-2025-04-16
-
+https://platform.openai.com/docs/models
 
